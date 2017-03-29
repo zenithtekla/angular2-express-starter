@@ -7,7 +7,7 @@ export interface IEmail {
   isFetching: false;
 }
 
-export const emailReducer: ActionReducer<IEmail[]> = (state: Array<IEmail> = [], action: Action): IEmail[] => {
+export const emailReducer: ActionReducer<IEmail> = (state: IEmail, action: Action): IEmail => {
 
   switch (action.type) {
 

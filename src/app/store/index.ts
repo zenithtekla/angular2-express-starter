@@ -21,7 +21,7 @@ export interface IAppState {
   feed: IFeed[];
   profile: IProfile;
   weather: IWeather;
-  email: IEmail[];
+  email: IEmail;
 }
 
 // all new reducers should be define here
