@@ -13,19 +13,23 @@ import { environment } from '../../environments/environment';
 import { IWeather, weatherReducer } from './weather/weather.reducer';
 import { WeatherEffects } from './weather/weather.effects';
 import { CommonModule } from '@angular/common';
+import { IEmail, emailReducer } from "./email/email.reducer";
+import { EmailEffects } from "./email/email.effects";
 
 // all new reducers should be define here
 export interface IAppState {
   feed: IFeed[];
   profile: IProfile;
   weather: IWeather;
+  email: IEmail[];
 }
 
 // all new reducers should be define here
 const reducers = {
   feed: feedReducer,
   profile: profileReducer,
-  weather: weatherReducer
+  weather: weatherReducer,
+  email: emailReducer
 };
 
 const productionReducer: ActionReducer<IAppState> = combineReducers(reducers);
@@ -56,5 +60,6 @@ export const instrumentation: ModuleWithProviders =
 export const effects: ModuleWithProviders[] = [
   EffectsModule.run(ProfileEffects),
   EffectsModule.run(FeedEffects),
-  EffectsModule.run(WeatherEffects)
+  EffectsModule.run(WeatherEffects),
+  EffectsModule.run(EmailEffects)
 ];

@@ -1,0 +1,14 @@
+<h1>EmailListing (inbox) module</h1>
+
+<app-ui-loader [visible]="(email$ | async)?.isFetching"></app-ui-loader>
+
+<h3>Form</h3>
+
+<form class="form" [formGroup]="form">
+  <app-ui-input label="Page" placeholder="Enter page...." [control]="form.get('page')"></app-ui-input>
+  <app-ui-input label="Limit" placeholder="Enter limit...." [control]="form.get('limit')"></app-ui-input>
+
+  <app-ui-button [disabled]="!form.valid"  text="Get Email List" (click)="getEmailList()"></app-ui-button>
+</form>
+
+<!--<app-ui-forecast *ngIf="(email$ | async)?.EmailList" [forecast]="(email$ | async)?.EmailList"></app-ui-forecast>-->

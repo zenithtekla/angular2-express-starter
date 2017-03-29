@@ -8,6 +8,7 @@ import { routing } from './app.router';
 import { effects, store, instrumentation } from './store';
 import { SharedModule } from './shared/shared.module';
 import { WeatherService } from './weather/weather.service';
+import {EmailService} from "./email/email.service";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { WeatherService } from './weather/weather.service';
     instrumentation
   ],
   providers: [
-    WeatherService
+    WeatherService,
+    EmailService
   ],
   bootstrap: [
     AppComponent
