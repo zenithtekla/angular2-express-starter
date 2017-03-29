@@ -5,6 +5,7 @@ import {Observable} from "rxjs";
 
 import {IAppState} from "../../store/index";
 import { EMAIL_LIST_GET } from "../../store/email/email.actions";
+import {IEmail} from "../../store/email/email.reducer";
 
 @Component({
   selector: 'app-email-listing',
@@ -13,7 +14,7 @@ import { EMAIL_LIST_GET } from "../../store/email/email.actions";
 })
 export class EmailListingComponent implements OnInit {
   form: FormGroup;
-  email$: Observable<{}>;
+  email$: Observable<IEmail>;
 
   constructor(public fb: FormBuilder, public store: Store<IAppState>) {}
 

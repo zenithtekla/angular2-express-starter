@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="container">
+    <h4><b>Inbox ({{EmailList.length}})</b></h4>
+  </div>
+  <div style="overflow-x:auto;">
+    <table>
+      <tr>
+        <th>#</th>
+        <th>Subject</th>
+        <th>SentDate</th>
+        <th>Sender</th>
+        <th>Content</th>
+      </tr>
+      <tr *ngFor="let email of EmailList">
+        <td>{{email?.counter}}</td>
+        <td>{{email?.Subject}}</td>
+        <td>{{email?.SentDate}}</td>
+        <td>{{email?.Sender.Email}}</td>
+        <td>{{email?.Body.slice(0,30)+'...'}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

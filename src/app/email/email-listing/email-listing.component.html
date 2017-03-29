@@ -8,7 +8,7 @@
   <app-ui-input label="Page" placeholder="Enter page...." [control]="form.get('page')"></app-ui-input>
   <app-ui-input label="Limit" placeholder="Enter limit...." [control]="form.get('limit')"></app-ui-input>
 
-  <app-ui-button [disabled]="!form.valid"  text="Get Email List" (click)="getEmailList()"></app-ui-button>
+  <app-ui-button [disabled]="!form.valid"  text="Inbox" title="Get Email List" (click)="getEmailList()"></app-ui-button>
 </form>
 
-<!--<app-ui-forecast *ngIf="(email$ | async)?.EmailList" [forecast]="(email$ | async)?.EmailList"></app-ui-forecast>-->
+<app-email-ui-listing *ngIf="(email$ | async)?.EmailList" [EmailList]="(email$ | async)?.EmailList"></app-email-ui-listing>
